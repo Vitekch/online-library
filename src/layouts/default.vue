@@ -1,7 +1,9 @@
 <template>
 <div id="app-container">
   <the-header />
-  <slot></slot>
+  <div class="container">
+    <slot></slot>
+  </div>
 </div>
 </template>
 
@@ -20,5 +22,9 @@ export default {
 #app-container {
   height: 100vh;
   background: var(--color-background);
+
+  & > .container {
+    margin-top: 104px;
+  }
 }
 </style>

@@ -20,6 +20,7 @@
           <underline-wrapper>О нас</underline-wrapper>
         </router-link>
         <app-button outlined class="the-header__login-btn"> Войти </app-button>
+        <app-button> Зарегистрироваться </app-button>
       </div>
     </div>
   </div>
@@ -66,7 +67,7 @@ export default {
     margin-left: auto;
     display: flex;
     gap: 16px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 200;
   }
   &__login-btn {
