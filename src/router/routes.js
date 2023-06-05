@@ -9,4 +9,9 @@ export default [
     name: 'auth',
     component: () => import('@/views/AuthView.vue'),
   },
+  {
+    path: '/catalog',
+    name: 'catalog',
+    component: () => import('@/views/CatalogView.vue'),
+  },
 ];

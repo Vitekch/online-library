@@ -10,7 +10,7 @@
           <underline-wrapper>Главная</underline-wrapper>
         </router-link>
         <router-link
-          to="/"
+          to="/catalog"
         >
           <underline-wrapper>Книги</underline-wrapper>
         </router-link>
@@ -51,8 +51,6 @@ export default {
 <style lang="scss" scoped>
 .the-header {
   &__container {
-    position: sticky;
-    top: 0;
     height: 88px;
 
     background: var(--color-control-background);

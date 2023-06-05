@@ -20,7 +20,8 @@ export default {
 
 <style lang="scss">
 #app-container {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0 16px 16px;
   background: var(--color-background);
 
   & > .container {
