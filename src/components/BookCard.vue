@@ -3,20 +3,20 @@
   <div class="book-card">
     <div
       class="book-card__front"
-      :style="`background-image: url(${img})`"
+      :style="`background-image: url(${book.img})`"
     ></div>
     <div class="book-card__additional">
-      <app-button>Подробнее</app-button>
+      <app-button :to="`/catalog/${book.id}`">Подробнее</app-button>
       <div class="book-card__additional__tags">
         <app-chip
-          v-for="(tag, idx) in tags"
+          v-for="(tag, idx) in book.tags"
           :key="idx"
           outlined
         >{{ tag }}</app-chip>
       </div>
     </div>
   </div>
-  <div class="book-card__title">{{ title }}</div>
+  <div class="book-card__title">{{ book.title }}</div>
 </div>
 </template>
 
@@ -33,17 +33,9 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
+    book: {
+      type: Object,
       required: true,
-    },
-    img: {
-      type: String,
-      default: '',
-    },
-    tags: {
-      type: Array,
-      default: () => [],
     },
   },
 };

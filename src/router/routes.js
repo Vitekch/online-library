@@ -14,4 +14,9 @@ export default [
     name: 'catalog',
     component: () => import('@/views/CatalogView.vue'),
   },
+  {
+    path: '/catalog/:id',
+    name: 'catalog-book',
+    component: () => import('@/views/CatalogBookView.vue'),
+  },
 ];

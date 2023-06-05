@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss">
 #app-container {
+  box-sizing: border-box;
   min-height: 100vh;
   padding-bottom: 16px;
   background: var(--color-background);

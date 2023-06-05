@@ -29,6 +29,9 @@ export default {
   &:hover {
     color: var(--color-primary);
   }
+  &:active {
+    transform: scale(.95);
+  }
   &__line {
     margin-top: 4px;
     height: 1px;
