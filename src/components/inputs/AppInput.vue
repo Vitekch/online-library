@@ -1,6 +1,6 @@
 <template>
 <div class="app-input__container">
-  <div class="app-input__label-wrapper"></div>
+  <div v-if="label" class="app-input__label-wrapper"></div>
   <input
     v-model="inputValue"
     class="app-input"
