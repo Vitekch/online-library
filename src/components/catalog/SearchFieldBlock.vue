@@ -1,7 +1,10 @@
 <template>
 <div class="search-block">
   <app-input class="search-block__input" v-model="searchValue"/>
-  <app-button class="search-block__button">Поиск по названию</app-button>
+  <app-button
+    class="search-block__button"
+    @click="$emit('search-init', searchValue)"
+  >Поиск по названию</app-button>
 </div>
 </template>
 

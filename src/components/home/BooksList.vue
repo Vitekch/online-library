@@ -88,6 +88,10 @@ export default {
       type: Number,
       default: 0,
     },
+    filterName: {
+      type: String,
+      default: '',
+    },
   },
 
   data: () => ({
@@ -96,9 +100,12 @@ export default {
 
   computed: {
     booksList() {
-      return this.limit > 0
-        ? this.books.slice(0, this.limit)
+      const tempBooks = this.filterName
+        ? this.books.filter(({ title }) => title.toLowerCase().includes(this.filterName.toLowerCase()))
         : this.books;
+      return this.limit > 0
+        ? tempBooks.slice(0, this.limit)
+        : tempBooks;
     },
   }
 };

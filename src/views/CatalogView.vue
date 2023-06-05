@@ -1,8 +1,8 @@
 <template>
 <div>
   <h2 class="section-heading">Каталог Библиофонд.</h2>
-  <search-field-block/>
-  <books-list/>
+  <search-field-block @search-init="searchValue = $event"/>
+  <books-list :filterName="searchValue"/>
 </div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
     BooksList,
     SearchFieldBlock,
   },
+
+  data: () => ({
+    searchValue: '',
+  }),
 };
 </script>
 
