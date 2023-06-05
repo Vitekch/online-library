@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { isAuth } from '@/helpers/auth';
 import AppDivider from '../AppDivider.vue';
 import LoginForm from './LoginForm.vue';
 import RegistrationForm from './RegistrationForm.vue';
@@ -39,6 +40,12 @@ export default {
       deep: true,
       immediate: true,
     },
+  },
+
+  created() {
+    if (isAuth()) {
+      this.$router.push('/');
+    }
   },
 };
 </script>

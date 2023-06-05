@@ -25,6 +25,7 @@ import { REGISTER_TYPE_FLAG } from './AuthContainer.vue';
 import {
   mdiAlertBoxOutline,
 } from '@mdi/js';
+import { LS_AUTH_TOKEN_KEY, LS_USER_ROLE_KEY } from '@/helpers/auth';
 
 const USERS = [
   {
@@ -71,10 +72,10 @@ export default {
       const user = USERS.find(({ login: l, password: p }) => l === login && p === password);
 
       if (user) {
-        window.localStorage.setItem('AUTH_TOKEN', '123123');
-        window.localStorage.setItem('USER_ROLE', user.role);
+        window.localStorage.setItem(LS_AUTH_TOKEN_KEY, '123123');
+        window.localStorage.setItem(LS_USER_ROLE_KEY, user.role);
 
-        this.$router.push('/');
+        this.$router.go(0);
       } else {
         this.error = 'Неверное имя пользователя или пароль'
       }

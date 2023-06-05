@@ -19,8 +19,11 @@
         >
           <underline-wrapper>О нас</underline-wrapper>
         </router-link>
-        <app-button outlined class="the-header__login-btn" to="/auth"> Войти </app-button>
-        <app-button :to="`/auth?type=${REGISTER_TYPE_FLAG}`"> Зарегистрироваться </app-button>
+        <template v-if="!isAuthentificated">
+          <app-button outlined class="the-header__login-btn" to="/auth"> Войти </app-button>
+          <app-button :to="`/auth?type=${REGISTER_TYPE_FLAG}`"> Зарегистрироваться </app-button>
+        </template>
+        <app-button v-else outlined class="the-header__login-btn" @click="logout"> Выйти </app-button>
       </div>
     </div>
   </div>
@@ -33,6 +36,7 @@ import AppButton from '@/components/controls/AppButton.vue';
 import UnderlineWrapper from '@/components/controls/UnderlineWrapper.vue';
 
 import { REGISTER_TYPE_FLAG } from '@/components/auth/AuthContainer.vue';
+import { isAuth, LS_AUTH_TOKEN_KEY } from '@/helpers/auth';
 
 export default {
   components: {
@@ -45,6 +49,19 @@ export default {
   data: () => ({
     REGISTER_TYPE_FLAG,
   }),
+
+  computed: {
+    isAuthentificated() {
+      return isAuth();
+    },
+  },
+
+  methods: {
+    logout() {
+      window.localStorage.removeItem(LS_AUTH_TOKEN_KEY);
+      this.$router.go(0);
+    },
+  },
 };
 </script>
 

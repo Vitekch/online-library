@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 #app-container {
   min-height: 100vh;
-  padding: 0 16px 16px;
+  padding-bottom: 16px;
   background: var(--color-background);
 
   & > .container {
