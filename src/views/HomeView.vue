@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <welcome-banner/>
+    <app-divider/>
     <cards-group/>
     <app-divider/>
     <h2 class="section-heading">Новое на Библиофонд.</h2>
@@ -12,6 +14,7 @@
 import CardsGroup from '@/components/home/CardsGroup.vue';
 import AppDivider from '@/components/AppDivider.vue';
 import BooksList from '@/components/home/BooksList.vue';
+import WelcomeBanner from '@/components/home/WelcomeBanner.vue';
 
 export default {
   name: 'HomeView',
@@ -20,6 +23,7 @@ export default {
     CardsGroup,
     AppDivider,
     BooksList,
+    WelcomeBanner,
   },
 }
 </script>
