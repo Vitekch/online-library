@@ -15,7 +15,7 @@
           <underline-wrapper>Книги</underline-wrapper>
         </router-link>
         <router-link
-          to="/"
+          to="/about-us"
         >
           <underline-wrapper>О нас</underline-wrapper>
         </router-link>

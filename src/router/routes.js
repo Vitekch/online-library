@@ -19,4 +19,9 @@ export default [
     name: 'catalog-book',
     component: () => import('@/views/CatalogBookView.vue'),
   },
+  {
+    path: '/about-us',
+    name: 'about-us',
+    component: () => import('@/views/AboutUsView.vue'),
+  },
 ];
