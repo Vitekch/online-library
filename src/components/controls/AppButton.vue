@@ -1,5 +1,19 @@
 <template>
+  <router-link
+    v-if="to"
+    :to="to"
+    :target="target"
+  >
+    <button
+      class="app-button"
+      :class="{ outlined }"
+      @click="$emit('click', $event)"
+    >
+      <slot></slot>
+    </button>
+  </router-link>
   <button
+    v-else
     class="app-button"
     :class="{ outlined }"
     @click="$emit('click', $event)"
@@ -16,6 +30,14 @@ export default {
     outlined: {
       type: Boolean,
       default: false,
+    },
+    to: {
+      type: [Object, String],
+      default: '',
+    },
+    target: {
+      type: String,
+      default: '',
     },
   },
 }

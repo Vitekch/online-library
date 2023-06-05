@@ -19,8 +19,8 @@
         >
           <underline-wrapper>О нас</underline-wrapper>
         </router-link>
-        <app-button outlined class="the-header__login-btn"> Войти </app-button>
-        <app-button> Зарегистрироваться </app-button>
+        <app-button outlined class="the-header__login-btn" to="/auth"> Войти </app-button>
+        <app-button :to="`/auth?type=${REGISTER_TYPE_FLAG}`"> Зарегистрироваться </app-button>
       </div>
     </div>
   </div>
@@ -32,6 +32,8 @@ import TheLogo from './TheLogo.vue';
 import AppButton from '@/components/controls/AppButton.vue';
 import UnderlineWrapper from '@/components/controls/UnderlineWrapper.vue';
 
+import { REGISTER_TYPE_FLAG } from '@/components/auth/AuthContainer.vue';
+
 export default {
   components: {
     TheLogo,
@@ -39,7 +41,11 @@ export default {
     UnderlineWrapper,
     AppButton,
   },
-}
+
+  data: () => ({
+    REGISTER_TYPE_FLAG,
+  }),
+};
 </script>
 
 <style lang="scss" scoped>

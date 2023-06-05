@@ -1,12 +1,20 @@
 <template>
 <div
 class="app-divider"
+:style="`--divide-space: ${divideSpace}`"
 ></div>
 </template>
 
 <script>
 export default {
   name: 'AppDivider',
+
+  props: {
+    divideSpace: {
+      type: [String, Number],
+      default: '64px',
+    },
+  },
 };
 </script>
 
@@ -17,7 +25,7 @@ export default {
   justify-content: center;
   height: 1px;
   width: 100%;
-  margin: 64px 0;
+  margin: var(--divide-space) 0;
   background: var(--color-primary);
 
   &::before {
